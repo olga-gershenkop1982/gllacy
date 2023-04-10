@@ -1,0 +1,1804 @@
+body {
+	min-width: 900px;
+	font: 16px/22px Roboto, sans-serif;
+	
+	color: #323232;
+	background-color: #849d8f; 
+}
+
+/*header; главной страницы=======================начало===============================================================================*/
+
+.main-header {
+	width: 866px;
+	padding-left: 14px;
+	padding-right: 20px;
+	padding-top: 9px;
+	margin: 0 auto;
+	
+	font-size: 0;
+}
+
+.clearfix::after { /*очищающий псевдоблок*/
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.main-logo { /*логотип*/
+	width: 154px;
+  height: 64px;
+	float: left;
+	padding-right: 16px;
+}
+
+.main-navigation { /*главное меню*/	
+	float: left;
+	width: 434px;
+	
+	font: bold 16px/22px Roboto, sans-serif;
+	color: #ffffff;
+}
+
+.main-menu>li { /*пункты главного меню*/
+	position: relative;
+	
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 19px;
+}
+
+.main-menu>li>a, 
+.main-menu>li>span { /*ссылки главного меню*/
+	position: relative;
+	
+	display: block;
+	padding: 6px 13px 7px 14px;
+	
+	font: bold 16px/22px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.main-menu>li>a:hover { /*поведение ссылок при наведении*/
+	font: bold 16px/22px Roboto, sans-serif;
+	
+	color: #333333;
+	background-color: #f7f6f3;
+	border-radius: 100px;
+}
+
+.main-menu>.active>a, 
+.main-menu>.active>span { /*активный пункт главного меню*/
+	font: bold 16px/22px Roboto, sans-serif;
+	color: #ffffff;
+	background-color: #d07058;
+	border-radius: 100px;
+}
+
+.main-menu>li>a:active { /*поведение ссылок при нажатии*/
+	font: bold 16px/22px Roboto, sans-serif;
+	
+	color: #333333;
+	background-color: #ededed;
+	border-radius: 100px;
+	box-shadow:inset 0 2px 1px #696969;
+}
+
+.main-menu>.active>a::after { /*оформление активного пункта главного меню*/
+	background-color: transparent;
+}
+
+.main-menu>li>a::after { /*оформление глав.ссылок*/
+	position: absolute;
+	bottom: 8px;
+	left: 14px;
+	right: 14px;
+	
+	content: "";
+	
+	height: 1px;
+	background-color: #c1cec7;
+}
+
+.main-menu>li>a:hover::after,
+.main-menu>li>a:active::after { /*поведениe оформления при наведении и нажатии*/
+	background-color: transparent;
+}
+
+.sub-menu { /*подменю*/
+	position: absolute;
+	left: -10px;
+	top: 50px;
+	z-index: 51;
+	
+	display: none;
+	width: 140px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	
+	color: #343434;
+	background-color: #f8f7f4;
+	border-radius: 5px;	
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sub-menu a, 
+.sub-menu .active span { /*ссылки подменю*/
+	display: block;
+	padding: 7px 10px 7px 20px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	
+	color: #343434;
+	text-decoration: none;	
+}
+
+.sub-menu li:first-child a { /*пункт "Новинки" подменю*/
+	position: relative;
+	
+	padding-top: 8px;
+	padding-bottom: 9px;
+	
+	font: bold 14px/22px Roboto, sans-serif;
+	color: #343434;
+}
+
+.sub-menu li:first-child a::after { /*оформление пункта "Новинки" подменю*/
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+	
+	content: "";
+	height: 1px;
+	background-color: #d1d0ce;
+}
+
+.sub-menu li:first-child:hover,
+.sub-menu li:first-child:active { /*поведение подменю при наведении и нажатии*/
+	border-radius: 5px 5px 0 0;
+}
+
+.sub-menu li:last-child:hover,
+.sub-menu li:last-child:active { /*поведение подменю при наведении и нажатии*/
+	border-radius: 0 0 5px 5px;
+}
+
+.sub-menu li:hover { /*пункты подменю при наведении*/
+	background-color: #fbded7;
+}
+
+.sub-menu li:active { /*пункты подменю при нажатии*/
+	background-color: #f6b5a5;
+}
+
+.sub-menu .active a, 
+.sub-menu .active span{ /*активный пункт подменю*/
+	font: 14px/22px Roboto, sans-serif; 
+	color: #ffffff;
+	background-color: #d07058;
+}
+
+.main-menu>li:hover .sub-menu { /*появление при наведении на род.элемент списка*/
+  display: block; 
+}
+
+.search-block { /*блок для "Лупа"*/
+	width: 33px;
+	height: 33px;
+	
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	
+	padding-top: 13px;
+	padding-bottom: 18px;
+	padding-right: 10px;
+}
+
+.search::after { /*изо-ние "Лупа"; обыч.состояние*/
+	position: absolute;
+	
+	width: 33px;
+	height: 33px;
+	
+	content: "";
+	background: #9db2a7 url(../images/sprite/magnifier.png) no-repeat 50% 50%;
+	border-radius: 20px;	
+}
+
+.search:hover::after { /*поведение "Лупа" при наведении*/
+	background: #f8f7f4 url(../images/sprite/magnifier-hover.png) no-repeat 50% 50%;
+}
+
+.user-block { /*блок для "Вход"*/
+	width: 93px;
+	display: inline-block;
+	vertical-align: top;
+	
+	padding-top: 15px;
+	padding-right: 9px;
+	padding-bottom: 18px;
+}
+
+.login { /*"Вход"*/
+	position: relative;
+	
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	
+	padding: 5px 17px 4px 16px;
+	padding-left: 44px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #9db2a7;
+	border-radius: 20px;
+}
+
+.login::before { /*изоб-ние "Вход"*/
+	position: absolute;
+	top: 6px;
+	left: 17px;
+	
+	content: "";
+	
+	width: 21px;
+	height: 19px;
+	
+	background: transparent url(../images/sprite/login.png) no-repeat;
+}
+
+.login:hover,
+.cart:hover { /*поведениe при наведении "Вход" и "Корзина"*/
+	background-color: #f8f7f4; 
+	color: #323232;
+}
+
+.login:hover::before { /*поведениe при наведении на изоб-ние "Вход"*/
+	background: transparent url(../images/sprite/login-hover.png) no-repeat;
+}
+
+.cart-block { /*блок для "Корзина"*/
+	display: inline-block;
+	vertical-align: top;
+	
+	width: 117px;
+	padding-top: 15px;
+	padding-bottom: 18px;
+}
+
+.cart { /*"Корзина"*/
+	position: relative;
+	
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	
+	padding: 5px 33px 4px 15px;
+	padding-left: 45px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #9db2a7;
+	border-radius: 20px;
+}
+
+.cart::before { /*изоб-ние "Корзина"*/
+	position: absolute;
+	top: 6px;
+	left: 17px;
+	
+	content: "";
+	
+	width: 21px;
+	height: 20px;
+	
+	background: transparent url(../images/sprite/cart.png) no-repeat;
+}
+
+.cart:hover::before { /*поведение при наведении на изоб-ние "Корзина"*/
+	background: transparent url(../images/sprite/cart-hover.png) no-repeat;
+}
+
+.contacts { 
+	float: right;
+	font: bold 14px/22px Roboto, sans-serif;
+	color: #ffffff;
+}
+
+.contacts .phone {
+	font: bold 22px/22px Roboto, sans-serif;
+}
+
+.container {
+	width: 860px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/*header; главной страницы=======================конец================================================================================*/
+/*header; страницы "Каталог"=====================начало===============================================================================*/
+
+.inner-menu {
+	margin-bottom: 10px;
+}
+
+.inner-menu .breadcrumbs { /*"хлебные крошки"*/
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	
+	font-size: 0;
+	color: #ffffff;
+}
+
+.breadcrumbs li, 
+.breadcrumbs a {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	
+	padding-top: 24px;
+	padding-right: 7px;
+	padding-left: 7px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	color: #ffffff;
+}
+
+.breadcrumbs a {
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.breadcrumbs a,
+.breadcrumbs .current {
+	text-decoration: #c2cec7 underline;
+}
+
+/*header; страницы "Каталог"=====================конец================================================================================*/
+/*main; главной страницы=====================начало===================================================================================*/
+
+.slider {
+	min-width: 900px;
+	
+	position: relative;
+	top: -117px;
+	z-index: 50;
+}
+
+.bxslider li img {
+	max-width: 100%;
+	display: block;
+}
+
+.bxslider p {
+	position: absolute;
+	top: 395px;
+	right: 106px;
+	
+	font: bold 60px/60px Roboto, sans-serif;
+	color: #ffffff;
+	text-align: center;
+}
+
+.bxslider .btn {
+	position: absolute;
+	top: 547px;
+	left: 325px;
+	
+	width: 197px;
+	height: 62px;
+	padding: 0 47px 4px 38px;
+	
+	font: bold 31px/63px Roboto, sans-serif;
+	
+	color: #ffffff;
+	border-radius: 34px;
+	text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+}
+
+.bx-pager {
+	position: absolute;
+	bottom: 287px;
+	left: 20px;
+	z-index: 51;
+	
+	width: 87px;
+}
+
+.bx-pager-link {
+	float: left;
+	
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin-right: 7px;
+	
+	text-indent: -9999px;
+	border-radius: 50%;
+	border: 2px solid #ffffff;
+}
+
+.bx-pager-link:hover {
+	background-color: #b2c1b7;
+}
+
+.bx-pager-item .active,
+.bx-pager-link:active {
+	background-color: #ffffff;
+}
+
+.bx-controls .bx-has-pager a.disabled {
+	display: block;
+}
+
+.bx-wrapper .bx-loading {
+	z-index: 50;
+}
+
+.bx-wrapper .bx-controls-direction a {
+	z-index: 51;
+}
+
+.banner, 
+.hits-item-row, 
+.features, 
+.news-delivery {
+	margin-bottom: 40px;
+}
+
+.banner-rasprberry, 
+.banner-chocolate {
+	position: relative;
+	width: 420px;
+	height: 229px; 
+	
+	font: bold 18px/1.3 Roboto, sans-serif;
+	color: #ffffff;	
+}
+
+.banner-rasprberry {
+	float: left;
+	background: #d499b9 url(../images/rasprberry-bg.png) no-repeat;
+	border-radius: 16px;
+}
+
+.banner-chocolate {
+	float: right;
+	background: #59392e url(../images/chocolate-bg.png) no-repeat;
+	border-radius: 16px;
+}
+
+.banner-title {
+	padding: 18px 19px 17px 19px;
+	font: bold 35px/1.3 Roboto, sans-serif;
+}
+
+.banner-rasprberry p, 
+.banner-chocolate p {
+	padding-left: 19px;
+	padding-bottom: 24px;
+	
+	font: bold 18px/22px Roboto, sans-serif;
+}
+
+.btn { /*кнопки*/
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	
+	padding: 12px 21px 12px 22px;
+	
+	font: bold 18px/22px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-decoration: none;
+	background-image: linear-gradient(to bottom, #e74a35, #f26843);
+	box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+	border-radius: 25px;
+}
+
+.banner-rasprberry .btn,
+.banner-chocolate .btn {
+	float: right;
+	margin-right: 21px;
+}
+
+.banner-rasprberry .btn { /*кнопка блока "banner-rasprberry"*/
+	width: 123px;
+	height: 22px;
+	padding: 12px 21px 12px 22px;
+}
+
+.banner-chocolate .btn { /*кнопка блока "banner-chocolate"*/
+	width: 143px;
+	height: 20px;
+	padding: 13px 24px 12px 22px;
+}
+
+.hits-item {
+	position: relative;
+	
+	float: left;
+	width: 200px;
+	
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.hits-item:first-child {
+	padding-left: 0;
+}
+
+.hits-item:last-child {
+	padding-right: 0;
+}
+
+.hits-item::before { /*картинки "hit"*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	content: "";
+	
+	width: 61px;
+	height: 61px;
+	
+	background: transparent url(../images/hit.png) no-repeat;	
+}
+
+.hits-item-link { /*ссылки блока "hits"*/
+	display: inline-block;
+	text-align: center;
+	
+	padding-top: 12px;
+	padding-bottom: 17px;
+	
+	font: 16px/22px Roboto, sans-serif;
+
+	color: #ffffff;
+	text-decoration: #a9bbb1 underline;
+}
+
+.hits-item-link:hover, 
+.hits-item-link:active { /*поведениe ссылок блока "hits" при наведении и нажатии*/
+	text-decoration: none;
+}
+
+.hits-item-price, 
+.hits-item-weight {
+	color: #ffffff;
+	text-shadow: -1px 0 3px rgba(49, 50, 53, 0.5);
+}
+
+.hits-item-price {
+	position: absolute;
+	top: 160px;
+	left: 0;
+	
+	font: bold 45px/13px Roboto, sans-serif;
+}
+
+.hits-item-weight {
+	position: absolute;
+	top: 160px;
+	left: 120px;
+	
+	font: bold 30px/13px Roboto, sans-serif;
+}
+
+.hits-item:nth-of-type(1) .btn-show,
+.hits-item:nth-of-type(2) .btn-show,
+.hits-item:nth-of-type(3) .btn-show,
+.hits-item:nth-of-type(4) .btn-show { /*кнопки блока "hits"*/
+	display: none;
+	width: 139px;
+	height: 23px;
+	padding: 6px 28px;
+	margin-bottom: 22px;
+	
+	font: bold 15px/24px Roboto, sans-serif;
+	color: #fefefe;
+}
+
+.hits-item:nth-of-type(1):hover, 
+.hits-item:nth-of-type(2):hover, 
+.hits-item:nth-of-type(3):hover, 
+.hits-item:nth-of-type(4):hover { /*поведениe при наведении блоков "hit-1, hit-2, hit-3, hit-4"*/
+	margin-top: -10px;
+	margin-bottom: -57px;
+	
+	padding-top: 10px;
+	background-color: #a7b8ad;
+	border-radius: 5px;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hits-item:nth-of-type(1):hover .btn, 
+.hits-item:nth-of-type(2):hover .btn, 
+.hits-item:nth-of-type(3):hover .btn, 
+.hits-item:nth-of-type(4):hover .btn { /*появление кнопок при наведении на блоки "hit-1, hit-2, hit-3, hit-4"*/
+	display: block;
+}
+
+.features {
+	width: 820px;
+	padding: 21px 20px 23px 20px;
+	
+	font: 16px/22px Roboto, sans-serif;
+	
+	color: #323232;
+	background: #eedfc3 url(../images/wafer-bg.jpg) no-repeat;
+	border-radius: 16px;
+}
+
+.features-title {
+	padding-bottom: 12px;
+	
+	font: 24px/30px Roboto, sans-serif;
+	color: #323232;
+}
+
+.features-content:first-of-type {
+	padding-bottom: 13px;
+}
+
+.features-content p {
+	position: relative;
+	
+	width: 343px;
+	padding-top: 14px;
+	padding-left: 57px;
+}
+
+.features-content p:first-of-type {
+	float: left;
+	padding-right: 20px;
+}
+
+.features-content p:last-of-type {
+	float: right;
+}
+
+.features-content p::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	content: "";
+	
+	width: 49px;
+	height: 49px;	
+}
+
+.feature-1::before {
+	background: transparent url(../images/feature-1.png) no-repeat;
+}
+
+.feature-2::before {
+	background: transparent url(../images/feature-2.png) no-repeat;
+}
+
+.feature-3::before {
+	background: transparent url(../images/feature-3.png) no-repeat;
+}
+
+.feature-4::before {
+	background: transparent url(../images/feature-4.png) no-repeat;
+}
+
+.news {
+	float: left;
+	padding: 25px 20px;
+	width: 380px;
+	height: 170px;
+	
+	background: #f8f7f4 url(../images/strawberry-bg.png) no-repeat;
+	border-radius: 16px;
+}
+
+.news h3 {
+	padding-bottom: 10px;
+	font: 16px/22px Roboto, sans-serif;
+	color: #5a5a5a;	
+}
+
+.news a {
+	font: bold 24px/1.2 Roboto, sans-serif;
+	
+	color: #353535;
+	background: rgba(255, 255, 255, 0.8) no-repeat;
+	text-decoration: underline;
+}
+
+.news a:hover, .news a:active {
+	color: #ec593c;
+	text-decoration: #f9cdc4 underline;
+}
+
+.delivery { /*блок "Рассылка"*/
+	position: relative;
+	
+	float: right;
+	width: 369px;
+	height: 144px;
+	padding: 35px 25px 41px 26px;
+	
+	background: #f8f7f4 url(../images/post-bg.png) no-repeat;
+	border-radius: 16px;
+}
+
+.delivery p {
+	padding-bottom: 16px;
+	font: 16px/22px Roboto, sans-serif;
+	color: #5a5a5a;
+}
+
+.delivery .email { /*поле ввода "email" блока "Рассылка"*/
+	width: 206px;
+	float: left;
+	padding: 9px 10px 12px 10px;
+	
+	font: 16px/24px Roboto, sans-serif;
+	
+	color: #999999;
+	background-color: #ffffff;
+	border: 1px solid #d3d3d2;
+	border-radius: 5px;
+	outline: none;
+}
+
+.delivery .email:hover,
+.delivery .email:focus { /*убираем эффект выдвижения у поля ввода "email" при наведении и фокусе*/
+	margin: -1px;
+}
+
+.delivery .email:hover { /*поведение поля ввода "email" блока "Рассылка" при наведении*/
+	border: 2px solid #c7c6c5;
+	outline: none;
+}
+
+.delivery .email:focus { /*поведение поля ввода "email" блока "Рассылка" при фокусе*/
+	font: bold 16px/24px Roboto, sans-serif;
+	
+	color: #353535;
+	border: 2px solid #8fbdec;
+	outline: none;
+}
+
+.delivery .btn { /*кнопка блока "Рассылка"*/
+	width: 131px;
+	height: 47px;
+	float: right;
+	
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	box-shadow: none;
+	background: url(../images/sprite/send-131.png) no-repeat;
+}
+
+.map {
+	position: relative;
+	
+	width: 900px;
+	height: 432px;
+	margin: 0 auto;
+	
+	background: #f7f1d9 url(../images/map.png) no-repeat;
+}
+
+.interactive-map {
+	position: relative;
+	
+	width: 900px;
+	height: 432px;
+	margin: 0 auto;
+}
+
+.info-block {
+	width: 253px;
+	float: right;
+	
+	margin-top: 66px;
+	margin-right: 20px;
+	padding: 29px 25px 27px 25px;
+	
+	font: bold 18px/22px Roboto, sans-serif;
+	color: #343434;
+	
+	background-color: #fdfefe;
+	border-radius: 15px;
+}
+
+.adress {
+	padding-bottom: 19px;
+}
+
+.adress .adress-title, 
+.phone .phone-title {
+	font: normal 14px/20px Roboto, sans-serif;
+}
+
+.adress .adress-title {
+	padding-bottom: 3px;
+}
+
+.adress p {
+	font: bold 18px/24px Roboto, sans-serif;
+}
+
+.phone .phone-title {
+	padding-bottom:6px;
+}
+
+.phone p {
+	font: bold 18px/22px Roboto, sans-serif;
+	padding-bottom: 5px;
+}
+
+.phone p.normal {
+	font: normal 14px/22px Roboto, sans-serif;
+	padding-bottom: 23px;
+}
+
+.info-block .btn {
+	width: 184px;
+	height: 26px;
+	padding: 10px 36px 11px 33px;
+	
+	font: bold 17px/24px Roboto, sans-serif;
+	color: #fefefe;
+}
+
+.map-marker {
+	position: absolute;
+	bottom: 150px;
+	left: 185px;
+}
+
+/*main; главной страницы=====================конец====================================================================================*/
+/*main; страницы "Каталог"=====================начало=================================================================================*/
+
+.inner-content-title {  /*заголовок страницы "Каталог"*/
+	margin-bottom: 30px;
+	font: bold 35px/30px Roboto, sans-serif;
+	color: #ffffff; 
+}
+
+.ingredients-row, 
+.ingredients-row:last-child {
+	width: 860px;
+}
+
+.ingredients-row {
+	margin-bottom: 18px;
+}
+
+.ingredients-row:last-child {
+	margin-bottom: 40px;
+}
+
+.sorting-form {
+	float: left;
+	width: 194px;
+}
+
+.filter-prices,
+.fatness,
+.fillers {
+	float: left;
+	font: 16px/22px Roboto, sans-serif;
+	color: #ffffff;
+}
+
+.sorting-form,
+.filter-prices,
+.fillers {
+	padding-right: 14px;
+}
+
+.filter-prices {
+	width: 220px;
+}
+
+.fatness {
+	width: 418px;
+}
+
+.fillers {
+	width: 702px;
+	font-size: 0;
+}
+
+.ingredients-row p { /*заголовки над -block-ками*/
+	padding-left: 16px;
+	padding-bottom: 3px;
+	
+	font: 14px/22px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-align: left;
+}
+
+.ingredients-row:nth-child(2) p {
+	padding-bottom: 5px;
+}
+
+.filter-prices-block,
+.fatness-block,
+.fillers-block {
+	height: 37px;
+	background-color: #9db2a7;
+	border-radius: 20px;
+}
+
+.fatness-block {
+	width: 382px; 
+	height: 23px;
+	padding: 8px 20px 6px 16px;
+	
+	font-size: 0;
+}
+
+.fatness-block .radio-custom {
+	position: relative; 
+	
+	display: inline-block;
+    vertical-align: middle;
+	
+	width: 18px;  				
+    height: 18px; 
+	
+    border: 1px solid #f8f7f4;
+    border-radius: 50%;
+}
+
+.fatness-block .label,
+.fillers-block .label-1,
+.fillers-block .label-2,
+.fillers-block .label-3,
+.fillers-block .label-4,
+.fillers-block .label-5 {
+	display: inline-block;
+    vertical-align: middle;
+	white-space: nowrap;
+	
+	font: 16px/22px Roboto, sans-serif;
+	color: #ffffff;
+}
+
+.fatness-block .label {
+	padding-left: 9px;
+	padding-right: 18px;
+}
+
+.fatness-block label:last-child .label {
+	padding-right: 0;
+}
+
+.fillers-block {
+	width: 667px;
+	height: 23px;
+	padding: 8px 19px 6px 16px;
+	
+	font-size: 0;
+}
+
+.fillers-block .checkbox-custom {
+	position: relative;
+	
+	display: inline-block;
+    vertical-align: middle;
+	
+	width: 16px;  				
+    height: 16px;
+	
+    border: 1px solid #f8f7f4;
+    border-radius: 3px;	
+}
+
+.fatness-block .radio-custom:hover,
+.fillers-block .checkbox-custom:hover {
+	border: 2px solid #f8f7f4;
+	margin: -1px;
+}
+
+.fillers-block .label-1,
+.fillers-block .label-4 {
+	padding-left: 12px;
+	padding-right: 21px;
+}
+
+.fillers-block .label-2 {
+	padding-left: 11px;
+	padding-right: 21px;
+}
+
+.fillers-block .label-3 {
+	padding-left: 13px;
+	padding-right: 24px;
+}
+
+.fillers-block .label-5 {
+	padding-left: 13px;
+	padding-right: 0;
+}
+
+.checkbox,
+.radio {       
+    display: none;
+}
+
+.radio:checked +.radio-custom::before {
+	position: absolute;
+	top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+	
+	content: ""; 
+	
+    display: block;			
+   		
+    background: #f8f7f4;
+	border-radius: 50%;
+}
+
+.checkbox:checked +.checkbox-custom::before {
+	position: absolute;
+	top: 7px;
+    left: 3px;
+    
+	width: 6px;
+	height: 3px;
+	
+	content: ""; 
+	background-color: #f8f7f4;
+}
+
+.checkbox:checked +.checkbox-custom::after {
+	position: absolute;
+	top: 6px;
+    left: 5px;
+    
+	width: 10px;
+	height: 3px;
+	
+	content: ""; 
+	background-color: #f8f7f4;   
+}
+
+.checkbox:checked +.checkbox-custom::before {
+	transform: rotate(45deg);
+}
+
+.checkbox:checked +.checkbox-custom::after {
+	transform: rotate(-45deg);
+}
+
+.apply .btn {
+	width: 144px;
+	height: 37px;
+	float: right;
+	margin-top: 27px;
+	
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	box-shadow: none;
+	background: url(../images/sprite/apply_btn.png) no-repeat;
+}
+
+.paginator {
+	text-align: right;
+	
+	margin-top: 64px;
+	margin-bottom: 30px;
+	
+	font-size: 0;
+}
+
+.paginator a,
+.paginator span {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	
+	height: 26px;
+	
+	font: 16px/26px Roboto, sans-serif;
+	
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.paginator a {
+	min-width: 27px;
+}
+
+.paginator span {
+	cursor: pointer;
+}
+
+.paginator a:hover {
+	color: #ffffff;
+	background-color: #9db1a5;
+	border-radius: 50%;
+}
+
+.paginator a:active,
+.paginator .current {
+	background-color: #ffffff;
+	border-radius: 50%;
+}
+
+.paginator a:active {
+	color: #333333;
+}
+
+.paginator .current {
+	color: #353535;
+}
+
+.paginator .disabled {
+	color: #9db1a5;
+}
+
+.paginator .prev {
+	padding: 6px 14px 6px 10px;
+}
+
+.paginator .next {
+	padding: 6px 0 6px 24px;
+}
+
+.line-separator {
+	width: 860px;
+	height: 1px;
+	background-color: #a9bbb1;
+}
+
+/*main; страницы "Каталог"=====================конец=================================================================================*/
+/*footer; главная страница========================начало=============================================================================*/
+
+.footer-content {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+.socials {
+	float: left;
+	width: 257px;
+	min-height: 38px;
+	
+	font-size: 0;
+}
+
+.socials-box {
+	width: 38px;
+	min-height: 38px;
+	padding-right: 11px;
+	
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.socials-box:last-child {
+	padding-right: 0;
+}
+
+.socials-box a::before {
+	display: block;
+	width: 32px;
+	height: 32px;
+	
+	content: "";
+	
+	text-decoration: none;
+	border-radius: 50%;
+	border: 3px solid rgba(194, 206, 199, 0.5);
+}
+
+.socials-box a:hover::before {
+	border: 4px solid rgba(219, 227, 222, 0.71);
+}
+
+.socials-box a:active::before {
+	border: 4px solid rgba(217, 225, 221, 0.70);
+}
+
+a.twitter-icon:hover::before,
+a.instagram-icon:hover::before,
+a.facebook-icon:hover::before,
+a.vk-icon:hover::before {
+	opacity: 0.98;
+}
+
+a.twitter-icon:active::before,
+a.instagram-icon:active::before,
+a.facebook-icon:active::before,
+a.vk-icon:active::before {
+	opacity: 1;
+	box-shadow:inset 0 2px 1px #888888;
+}
+
+a.twitter-icon::before {
+	background: url(../images/sprite/twitter.png) no-repeat 50% 50%;
+	opacity: 0.8;
+}
+
+a.instagram-icon::before {
+	background: url(../images/sprite/instagram.png) no-repeat 50% 50%;
+	opacity: 0.8;
+}
+
+a.facebook-icon::before {
+	background: url(../images/sprite/facebook.png) no-repeat 50% 50%;
+	opacity: 0.8;
+}
+
+a.vk-icon::before {
+	background: url(../images/sprite/vk.png) no-repeat 50% 50%;
+	opacity: 0.8;
+}
+
+.bottom-menu {
+	float: left;
+	width: 414px;
+}
+
+.bottom-menu-content {
+	float: left;
+	padding-right: 10px;
+}
+
+.bottom-menu-content a {
+	display: block;
+	padding-left: 22px;
+	
+	font: 13px/22px Roboto, sans-serif;
+	color: #ffffff;
+	text-decoration: #abbcb3 underline;
+}
+
+.bottom-menu-content a:hover, 
+.bottom-menu-content a:active,
+.copyrights a:hover,
+.copyrights a:active{
+	color: #ffbc9e;
+	text-decoration: #a7a294 underline;
+}
+
+.copyrights {
+	width: 189px;
+	float: left;
+}
+
+.bottom-logo {
+	width: 108px;
+	height: 38px;
+	padding-bottom: 3px;
+}
+
+.copyrights p {
+	width: 190px;
+	padding-bottom: 15px;
+	
+	font: 12px/22px Roboto, sans-serif;
+	color: #fefefe;
+}
+
+.copyrights a {
+	font: 12px/22px Roboto, sans-serif;
+	
+	color: #fefefe;
+	text-decoration: #b5c4bc underline;
+}
+/*footer; главная страница========================конец==============================================================================*/
+
+/*Всплывающие формы; фоверы
+=====================================================================================================================================*/
+.modal-delivery { /*Обратная связь; фовер*/
+	position: absolute;
+	top: 337px;
+	right: 373px;
+	z-index: 54;
+	
+	display: none;
+	width: 428px;
+	padding: 19px 25px 25px 24px;
+	
+	font: 16px/24px Roboto, sans-serif;
+	
+	color: #656565;
+	background-color: #f8f7f4;
+	border-radius: 10px;
+}
+
+.modal-delivery-show { /*класс для JS; открыть модальное окно*/
+	display: block;
+}
+
+.modal-close {
+	width: 18px;
+	height: 17px;
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	background-color: transparent;
+}
+
+.modal-close::before, 
+.modal-close::after {
+	position: absolute;
+	top: 7px;
+	left: -2px;
+	
+	width: 22px;
+	height: 3px;
+	
+	content: "";
+	
+	background-color: #343434;
+	border-radius: 1px;
+}
+
+.modal-close::before {
+	transform: rotate(45deg);
+}
+
+.modal-close::after {
+	transform: rotate(-45deg);
+}
+
+.modal-delivery-title {
+	padding-bottom: 21px;
+	font: 24px/22px Roboto, sans-serif;
+	color: #343434;	
+}
+
+.modal-delivery .text, 
+.modal-delivery .email, 
+.modal-delivery .info {
+	font: 16px/24px Roboto, sans-serif;
+	color: #656565;
+	
+	background-color: #ffffff;
+	border: 1px solid #d3d3d2;
+	border-radius: 5px;
+}
+
+.modal-delivery .text {
+	width: 232px;
+	padding: 9px 16px 7px 16px;
+	margin-bottom: 20px;
+}
+
+.modal-delivery .email {
+	width: 222px;
+	padding: 9px 21px 8px 21px;
+	margin-bottom: 20px;
+}
+
+.modal-delivery .info {
+	width: 383px;
+	height: 126px;
+	padding: 8px 21px;
+	margin-bottom: 25px;
+}
+
+.modal-delivery .text:hover, 
+.modal-delivery .email:hover, 
+.modal-delivery .info:hover {
+	outline: none;
+	border: 2px solid #c7c6c5;
+}
+
+.modal-delivery .text:hover, 
+.modal-delivery .text:focus {
+	padding: 8px 15px 6px 15px;
+}
+
+.modal-delivery .email:hover, 
+.modal-delivery .email:focus {
+	padding: 8px 20px 7px 20px;
+}
+
+.modal-delivery .info:hover, 
+.modal-delivery .info:focus {
+	padding: 7px 20px;
+}
+
+.modal-delivery .text:focus, 
+.modal-delivery .email:focus, 
+.modal-delivery .info:focus {
+	outline: none;
+	border: 2px solid #8fbdec;
+	font: bold 16px/24px Roboto, sans-serif;
+	color: #353535;
+}
+
+.modal-delivery .btn {
+	width: 131px;
+	height: 47px;
+	float: right;
+	
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	box-shadow: none;
+	background: url(../images/sprite/send-131.png) no-repeat;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 54;
+	
+	display: none;
+	width: 100%;
+	height: 100%;
+	
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay-show {
+	display: block;
+}
+
+.modal-searching { /*Поиск; ховер*/
+	position: absolute;
+	top: 60px;
+	right: 428px;
+	z-index: 53;
+	
+	display: none;
+	width: 310px;
+	padding: 14px 16px;
+	
+	font: 14px/24px Roboto, sans-serif;
+	
+	color: #999999;
+	background-color: #f8f7f4;
+	border-radius: 5px;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-searching-show { /*класс для JS; открыть модальное окно*/
+	display: block;
+}
+
+.modal-searching .search { /*поле ввода; Поиск*/
+	box-sizing: border-box;
+	
+	display: block;
+	width: 100%;
+	padding: 7px 11px;
+	
+	font: 14px/24px Roboto, sans-serif;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid #d3d3d2;
+	border-radius: 5px;
+}
+
+.modal-searching .search:hover {
+	outline: none;
+	border: 2px solid #c7c6c5;
+}
+
+.modal-searching .search:focus {
+	outline: none;
+	border: 2px solid #8fbdec;
+	font: bold 16px/24px Roboto, sans-serif;
+	color: #353535;
+}
+
+.modal-searching .search:hover, 
+.modal-searching .search:focus {
+	margin: -1px;
+}
+
+.modal-entry { /*Вход; фовер*/
+	position: absolute;
+	top: 60px;
+	right: 326px;
+	z-index: 52;
+	
+	display: none;
+	width: 241px;
+	padding: 19px 15px 14px 16px;
+	
+	font: 14px/24px Roboto, sans-serif;
+	
+	color: #999999;
+	background-color: #f8f7f4;
+	border-radius: 5px;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-entry-show { /*класс для JS; открыть модальное окно*/
+	display: block;
+}
+
+.modal-entry  .email, 
+.modal-entry  .password { /*поле ввода "email" и "password"; Вход*/
+	width: 210px;
+	
+	font: 14px/24px Roboto, sans-serif;
+	color: #999999;
+	
+	background-color: #ffffff;
+	border: 1px solid #d3d3d2;
+	border-radius: 5px;
+}
+
+.modal-entry  .email { /*поле ввода "email"; Вход*/
+	padding: 7px 15px;
+	margin-bottom: 9px;
+}
+
+.modal-entry  .password { /*поле ввода "password"; Вход*/
+	padding: 8px 15px;
+	margin-bottom: 15px;
+}
+
+.modal-entry  .email:hover, 
+.modal-entry  .password:hover {
+	outline: none;
+	border: 2px solid #c7c6c5;
+}
+
+.modal-entry  .email:hover, 
+.modal-entry  .email:focus {
+	padding: 6px 14px;
+}
+
+.modal-entry  .password:hover, 
+.modal-entry  .password:focus {
+	padding: 7px 14px;
+}
+
+.modal-entry  .email:focus, 
+.modal-entry  .password:focus {
+	outline: none;
+	border: 2px solid #8fbdec;
+	font: bold 16px/24px Roboto, sans-serif;
+	color: #353535;
+}
+
+.modal-entry  .btn { /*кнопка "Войти"; Вход*/
+	width: 103px;
+	height: 37px;
+	float: left;
+	
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	box-shadow: none;
+	background: url(../images/sprite/entry.png) no-repeat;
+}
+
+.modal-entry  .btn:hover { /*поведениe кнопки "Войти" при наведении; Вход*/
+	background: url(../images/sprite/entry-hover.png) no-repeat;
+}
+ 
+.modal-entry  .btn:active { /*поведениe кнопки "Войти" при нажатии; Вход*/
+	background: url(../images/sprite/entry-active.png) no-repeat;
+}
+
+.restore, 
+.check-in { /*"Забыли пароль" и "Новая регистрация"; Вход*/
+	float: left;
+	text-align: left;
+	padding-left: 18px;
+	
+	font: 13px/24px Roboto, sans-serif;
+	
+	color: #333333;
+	text-decoration: #adacaa underline;
+}
+
+.restore:hover,
+.restore:active, 
+.check-in:hover,
+.check-in:active {
+	color: #ec593c;
+	text-decoration: #f9cdc4 underline;
+}
+
+.modal-cart { /*"Корзина"; фовер*/
+	position: absolute;
+	top: 60px;
+	right: 201px;
+	z-index: 51;
+	
+	display: none;
+	width: 508px;
+	padding: 26px 15px 19px 17px;
+	
+	font: 13px/22px Roboto, sans-serif;
+	color: #333333;
+	background-color: #f8f7f4;
+	border-radius: 5px;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-cart-show { /*класс для JS; открыть модальное окно "Корзина"*/
+	display: block;
+}
+
+.modal-container {
+	padding-right: 19px;
+}
+
+.carts-item  li {
+	float: left;
+	width: 489px;
+}
+
+.modal-remove {
+	width: 11px;
+	height: 11px;
+	
+	padding-left: 0;
+	padding-right: 0;
+	
+	font-size: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+.carts-item:nth-child(1) .modal-remove {
+	position: absolute;
+	top: 38px;
+	left: 17px;
+}
+
+.carts-item:nth-child(2) .modal-remove {
+	position: absolute;
+	top: 114px;
+	left: 17px;
+}
+
+.carts-item:nth-child(odd) {
+	padding-bottom: 20px;
+}
+
+.carts-item:nth-child(even) {
+	padding-bottom: 18px;
+}
+
+.carts-item:nth-child(1) .modal-remove::before,
+.carts-item:nth-child(1) .modal-remove::after,
+.carts-item:nth-child(2) .modal-remove::before,
+.carts-item:nth-child(2) .modal-remove::after {
+	position: absolute;
+	top: 5px;
+	right: -2px;
+	
+	width: 14px;
+	height: 2px;
+	
+	content: "";
+	
+	background-color: #6c6c6b;
+	border-radius: 1px;
+}
+
+.carts-item:nth-child(1) .modal-remove::before,
+.carts-item:nth-child(2) .modal-remove::before {
+	transform: rotate(45deg);
+}
+
+.carts-item:nth-child(1) .modal-remove::after,
+.carts-item:nth-child(2) .modal-remove::after {
+	transform: rotate(-45deg);
+}
+
+.carts-item .cart-image {
+	width: 33px;
+	height: 33px;
+	
+	padding-left: 24px;
+	padding-right: 14px;
+}
+
+.carts-item:nth-child(odd) .cart-item, 
+.carts-item:nth-child(even) .cart-item {
+	width: 215px;
+	font: 13px/22px Roboto, sans-serif;
+	color: #333333;
+}
+
+.carts-item:nth-child(odd) .cart-item {
+	padding: 7px 32px 5px 0;
+}
+
+.carts-item:nth-child(even) .cart-item {
+	padding: 7px 32px 11px 0;
+}
+
+.carts-item:nth-child(odd) .cart-price, 
+.carts-item:nth-child(even) .cart-price {
+	width: 93px;
+	font: 13px/22px Roboto, sans-serif;
+	color: #333333;
+}
+
+.carts-item:nth-child(odd) .cart-price {
+	padding: 7px 29px 5px 0;
+}
+
+.carts-item:nth-child(even) .cart-price {
+	padding: 7px 29px 11px 0;
+}
+
+.carts-item:nth-child(odd) .cart-price span, 
+.carts-item:nth-child(even) .cart-price span {
+	color: #808080;
+}
+
+.carts-item:nth-child(odd) .cart-value, 
+.carts-item:nth-child(even) .cart-value {
+	width: 49px;
+	font: 13px/22px Roboto, sans-serif;
+	color: #333333;
+}
+
+.carts-item:nth-child(odd) .cart-value {
+	padding: 7px 0 5px 0;
+}
+
+.carts-item:nth-child(even) .cart-value {
+	padding: 7px 0 11px 0;
+}
+
+.cart-separator {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.cart-result {
+	float: right;
+	padding-top: 13px;
+	padding-bottom: 14px;
+	
+	font: bold 15px/22px Roboto, sans-serif;
+	color: #333333;
+}
+
+.modal-cart .btn {
+	width: 119px;
+	height: 25px;
+	padding: 5px 21px 5px 23px;
+	margin-right: 19px;
+	
+	font: bold 15px/24px Roboto, sans-serif;
+	
+	color: #fefefe;
+}
