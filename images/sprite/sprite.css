@@ -1,0 +1,74 @@
+.bg-apply_btn {
+    width: 144px; height: 37px;
+    background: url('css_sprites.png') -161px -10px;
+}
+
+.bg-cart {
+    width: 21px; height: 20px;
+    background: url('css_sprites.png') -10px -191px;
+}
+
+.bg-cart_hover {
+    width: 21px; height: 20px;
+    background: url('css_sprites.png') -51px -191px;
+}
+
+.bg-entry {
+    width: 103px; height: 37px;
+    background: url('css_sprites.png') -10px -77px;
+}
+
+.bg-entry_active {
+    width: 103px; height: 37px;
+    background: url('css_sprites.png') -133px -77px;
+}
+
+.bg-entry_hover {
+    width: 103px; height: 37px;
+    background: url('css_sprites.png') -10px -134px;
+}
+
+.bg-facebook {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -133px -134px;
+}
+
+.bg-instagram {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -237px -134px;
+}
+
+.bg-login {
+    width: 21px; height: 19px;
+    background: url('css_sprites.png') -92px -191px;
+}
+
+.bg-login_hover {
+    width: 21px; height: 19px;
+    background: url('css_sprites.png') -133px -191px;
+}
+
+.bg-magnifier {
+    width: 17px; height: 17px;
+    background: url('css_sprites.png') -174px -191px;
+}
+
+.bg-magnifier_hover {
+    width: 17px; height: 17px;
+    background: url('css_sprites.png') -211px -191px;
+}
+
+.bg-send_131 {
+    width: 131px; height: 47px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+.bg-twitter {
+    width: 33px; height: 32px;
+    background: url('css_sprites.png') -256px -77px;
+}
+
+.bg-vk {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -185px -134px;
+}
